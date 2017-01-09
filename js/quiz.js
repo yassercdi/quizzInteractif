@@ -13,3 +13,27 @@ var questions = [
         reponse: "La lettre N"
     }
 ];
+
+
+
+
+for (var i = 0; i < questions.length; i++) {
+
+    var ordreQuestion = document.createElement("strong");
+
+    ordreQuestion.textContent = "Question" + i + ": ";
+    ordreQuestion.id = i;
+    document.getElementById("contenu").appendChild(ordreQuestion);
+    var question = document.createElement("span");
+    question.textContent = questions[i].enonce;
+    question.id = "q" + i;
+    document.getElementById(i).insertAdjacentHTML("afterend", question.textContent);
+    var espace = document.createElement("br");
+    document.getElementById("contenu").appendChild(espace);
+    var bouton = document.createElement("button");
+    bouton.textContent = "reponse";
+    document.getElementById("contenu").appendChild(bouton);
+    var espace = document.createElement("br");
+    document.getElementById("contenu").appendChild(espace);
+
+}
